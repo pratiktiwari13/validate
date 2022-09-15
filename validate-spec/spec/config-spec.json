@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "http://github.io/pratikiwari13/validate/config",
+  "title": "Validate config schema",
+  "description": "This spec describes the schema for the validate config file",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "config": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "required": [
+              "name",
+              "root",
+              "properties"
+            ],
+            "additionalProperties": false,
+              "properties": {
+                "root": {
+                  "description": "the root this config is going to work with, the properties which needs to be validated must be of this root, this should be a fully qualified class name",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "name of the config which will be used to refer in the apply config and while composing other configs",
+                  "type": "string"
+                },
+                "properties":{
+                  "description": "properties which are needed to be validated, provide validation component names here",
+                  "type": "array",
+                  "additionalProperties": false,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "description": "map of he field to be validated",
+                        "type": "string"
+                      },
+                      "validation": {
+                        "description": "name of the validation component",
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "minItems": 1
+                },
+                "rules": {
+                  "description": "preconditions which get evaluated before the validation of the given object starts",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["name","root","inherits"],
+            "additionalProperties": false,
+              "properties": {
+                "root": {
+                  "description": "the root this config is going to work with, the properties which needs to be validated must be of this root, this should be a fully qualified class name",
+                  "type": "string"
+                },
+                "name": {
+                  "description": "name of the config which will be used to refer in the apply config and while composing other configs",
+                  "type": "string"
+                },
+                "properties":{
+                  "type": "array",
+                  "additionalProperties": false,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "name": {
+                        "description": "map of he field to be validated",
+                        "type": "string"
+                      },
+                      "validation": {
+                        "description": "name of the validation component",
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "minItems": 1
+                },
+                "rules": {
+                  "description": "preconditions which get evaluated before the validation of the given object starts",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "inherits": {
+                  "description": "Config name of the schema which is to be inherited",
+                  "type": "string"
+                },
+                "ignoreFields": {
+                  "description": "Ignore the validation on the fields which are inherited",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                },
+                "ignoreRules": {
+                  "description": "Ignore the rules which are inherited",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                }
+              }
+          }
+        ]
+      }
+    }
+  }
+}

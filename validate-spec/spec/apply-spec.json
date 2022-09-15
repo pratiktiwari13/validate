@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema",
+  "$id": "http://github.io/pratikiwari13/validate/config",
+  "title": "Validate apply schema",
+  "description": "This spec describes the schema for the validate apply file",
+  "type": "object",
+  "additionalProperties": false,
+  "patternProperties": {
+    ".*": {
+      "type": "array",
+      "description": "fully qualified name of the class + the method name on which the validation is o be applied",
+      "items": {
+        "type": "string",
+        "description": "names of the configs"
+      }
+    }
+  }
+}
