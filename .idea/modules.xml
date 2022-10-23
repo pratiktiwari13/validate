@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/validate.iml" filepath="$PROJECT_DIR$/.idea/validate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validate-annotations/validate-annotations.iml" filepath="$PROJECT_DIR$/validate-annotations/validate-annotations.iml" />
       <module fileurl="file://$PROJECT_DIR$/validate-core/validate-core.iml" filepath="$PROJECT_DIR$/validate-core/validate-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/validate-prepocessor/validate-prepocessor.iml" filepath="$PROJECT_DIR$/validate-prepocessor/validate-prepocessor.iml" />
       <module fileurl="file://$PROJECT_DIR$/validate-spec/validate-spec.iml" filepath="$PROJECT_DIR$/validate-spec/validate-spec.iml" />
     </modules>
   </component>

@@ -1,6 +1,7 @@
 package spec;/* (C)2022 */
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.networknt.schema.JsonSchemaFactory;
@@ -10,6 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -28,7 +30,10 @@ public class ValidConfigsTest {
         if (testData == null)
             testData =
                     objectMapper.readTree(
-                            this.getClass().getResourceAsStream("/valid-test-configs.json.json"));
+                            this.getClass().getResourceAsStream("/valid-test-configs.json"));
+        TypeReference<HashMap<String,Object>> typeRef
+                = new TypeReference<HashMap<String,Object>>() {};
+        HashMap<String,Object> o = objectMapper.readValue(this.getClass().getResourceAsStream("/valid-test-configs.json"), typeRef);
     }
 
     @Test

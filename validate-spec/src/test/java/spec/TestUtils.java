@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
+import java.io.IOException;
 
 public class TestUtils {
 
@@ -14,7 +15,7 @@ public class TestUtils {
     }
 
     public static JsonNode getConfigFromTestConfigs(
-            JsonNode node, String fieldName, String fieldValue) throws JsonProcessingException {
+            JsonNode node, String fieldName, String fieldValue) throws IOException {
         JsonNode configNode =
                 node.findParents(fieldName).stream()
                         .filter(parent -> parent.findValue(fieldName).asText().equals(fieldValue))

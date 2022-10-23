@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="validate-annotations" />
         <module name="validate-spec" />
         <module name="validate-core" />
+        <module name="validate-prepocessor" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="validate" target="1.8" />
       <module name="validate-agent" target="1.8" />
+      <module name="validate-annotations" target="1.8" />
       <module name="validate-core" target="1.8" />
+      <module name="validate-prepocessor" target="1.8" />
       <module name="validate-spec" target="1.8" />
     </bytecodeTargetLevel>
   </component>

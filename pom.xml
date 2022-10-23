@@ -11,7 +11,8 @@
     <modules>
         <module>validate-spec</module>
         <module>validate-core</module>
-        <module>validate-agent</module>
+        <module>validate-annotations</module>
+        <module>validate-prepocessor</module>
     </modules>
     <dependencies>
         <dependency>
@@ -20,11 +21,11 @@
             <version>RELEASE</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.4.4</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
     <build>
         <plugins>

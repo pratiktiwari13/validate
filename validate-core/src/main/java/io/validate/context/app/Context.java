@@ -1,6 +1,7 @@
 /* (C)2022 */
 package io.validate.context.app;
 
+import io.validate.api.Validation;
 import io.validate.api.internal.DefaultArgumentProvider;
 import io.validate.api.internal.DefaultPreconditionProvider;
 import io.validate.api.internal.DefaultValidationProvider;
@@ -42,7 +43,7 @@ public class Context {
         return currentArgumentProvider;
     }
 
-    public ResourceProvider getCurrentValidationProvider() {
+    public ResourceProvider<Validation> getCurrentValidationProvider() {
         if (currentValidationProvider == null)
             return new DefaultValidationProvider(); // replace it with SPI calls for spring and
         // other object providers

@@ -55,9 +55,7 @@ public class ValidationConfig {
                                         Context.getInstance()
                                                 .getCurrentPreconditionProvider()
                                                 .provide(rawPrecondition.getName()))
-                .filter(precondition -> precondition.preEvaluate(root) == false)
-                .findFirst()
-                .isPresent();
+                .anyMatch(precondition -> !precondition.preEvaluate(root));
     }
 
     public boolean executeValidations(RequestContext requestContext) throws Throwable {
