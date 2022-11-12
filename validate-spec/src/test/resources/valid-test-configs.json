@@ -1,113 +1,100 @@
 {
-  "config": [
+  "configs":[
     {
-      "name": "ullamco voluptate labore ut veniam",
-      "root": "incididunt",
-      "inherits": "est",
-      "ignoreRules": [
-        "do minim",
-        "deserunt fugiat velit enim et",
-        "incididunt dolore"
-      ],
-      "rules": [
-        "aliqua est cillum Duis",
-        "est et",
-        "exercitation id mollit labore magna"
-      ],
-      "ignoreFields": [
-        "esse in ex",
-        "minim fugiat",
-        "in",
-        "magna",
-        "dolor ea elit"
-      ]
-    },
-    {
-      "name": "reprehenderit nostrud ad",
-      "root": "sint veniam ut dolor ut",
-      "inherits": "qui enim laborum ut",
-      "ignoreFields": [
-        "aliqua adipisicing ad magna incididunt",
-        "dolor deserunt Ut"
-      ],
-      "ignoreRules": [
-        "eiusmod culpa aute et id",
-        "dolore quis"
-      ],
-      "rules": [
-        "elit",
-        "sit laboris Duis"
-      ]
-    },
-    {
-      "name": "sint ullamco voluptate",
-      "root": "labore exercitation pariatur aliquip aliqua",
-      "properties": [
-        {
+      "name":"BaseConfig",
+      "roots":[{
+      	"name":"Root",
+        "properties":[{
           "validation": "fugiat dolore cillum adipisicing magna",
-          "name": "elit Duis ut"
+          "name": "field1"
+        },{
+          "validation": "fugiat dolore cillum adipisicing magna",
+          "name": "field2"
         }
-      ],
-      "rules": [
-        "esse minim ut dolor quis",
-        "ad proident",
-        "et nostrud voluptate ea dolore",
-        "laborum sunt aute nulla cillum",
-        "veniam magna"
-      ]
+       ]
+      }],
+      "rules":["ruleName1","ruleName2","ruleName3","ruleName4"]
     },
     {
-      "name": "sunt incididunt proident exercitation irure",
-      "root": "anim est incididunt",
-      "properties": [
-        {
-          "validation": "elit occaecat ut aliquip",
-          "name": "cupidatat cillum eu ipsum",
-          "sit65": -5625497,
-          "adipisicing_8": "ut eu aute ad",
-          "ea4": -51599989,
-          "culpa6": true
-        },
-        {
-          "validation": "velit reprehenderit incididunt ullamco consectetur",
-          "name": "ex cupidatat velit elit deserunt",
-          "nostrud_15": 58844461.64859152,
-          "eiusmod4": 74077451.05675212
-        },
-        {
-          "name": "et",
-          "validation": "sunt ex in",
-          "est_7ea": false,
-          "amet_6": true,
-          "mollit_6": "qui sed"
-        },
-        {
-          "validation": "aute",
-          "name": "veniam",
-          "nostruda": true,
-          "labore_4": "dolor non occaecat velit",
-          "aute4": -85103802
-        }
-      ],
-      "rules": [
-        "Duis commodo laborum tempor ut",
-        "sed dolore dolor",
-        "exercitation ipsum",
-        "incididunt"
-      ]
+      "name":"InheritingConfig",
+      "inherits":[{
+        "configName":"BaseConfig",
+        "rules":{"inheritExcept":["rule1","rule2"]}
+      }],
+      "roots":[{
+      	"name":"Root",
+        "inherits":[{
+          "configName":"BaseConfig",
+          "properties":{"inherit":["field1","field2"]}
+        }],
+        "properties":[{
+        	"validation":"validation name",
+          	"name":"fieldName"
+        }]
+      }]
     },
     {
-      "name": "deserunt anim ut laborum",
-      "root": "minim ea",
-      "properties": [
-        {
-          "validation": "et",
-          "name": "in",
-          "aliquip_218": -6404811.871018007
+      "name":"InheritingConfig",
+      "roots":[{
+      	"name":"Root",
+        "inherits":[{
+          "configName":"BaseConfig",
+          "properties":{"inherit":["field1","field2"]}
+        }],
+        "properties":[{
+        	"validation":"validation name",
+          	"name":"fieldName"
+        }]
+      }]
+    },
+    {
+      "name":"InheritingConfig",
+      "roots":[{
+      	"name":"Root",
+        "inherits":[{
+          "configName":"BaseConfig",
+          "properties":{"inherit":["field1","field2"]}
+        }],
+      }]
+    },
+    {
+      "name":"InheritingConfig",
+      "inherits":[{
+        "configName":"BaseConfig",
+        "rules":{"inheritExcept":["rule1","rule2"]}
+      }],
+      "roots":[{
+      	"name":"Root",
+        "inherits":[{
+          "configName":"BaseConfig",
+          "properties":{"inherit":["field1","field2"]}
+        }],
+      }]
+    },
+    {
+      "name":"InheritingConfig",
+      "roots":[{
+      	"name":"Root",
+        "inherits":[{
+          "configName":"BaseConfig",
+          "properties":{"inherit":["field1","field2"]}
+        }],
+      }],
+      "rules":["rule1","rule2"]
+    },
+    {
+      "name":"BaseConfig",
+      "roots":[{
+      	"name":"Root",
+        "properties":[{
+          "validation": "fugiat dolore cillum adipisicing magna",
+          "name": "field1"
+        },{
+          "validation": "fugiat dolore cillum adipisicing magna",
+          "name": "field2"
         }
-      ]
-    }
-  ],
-  "dolorf": "laboris mollit",
-  "aliquip_0": -7990247
+       ]}
+       ]
+    },
+  ]
 }

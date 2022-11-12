@@ -6,5 +6,5 @@ import java.lang.annotation.*;
 @Target(value = ElementType.TYPE)
 @Documented
 public @interface Validation {
-    String name=null;
+    String name();
 }

@@ -49,6 +49,7 @@ public class Walker {
             if(parentAttribute==null) parentAttribute = key;
             if(isNewConfig(key,parentAttribute))
                 currentConfig = (String)objectModelMap.get(key);
+
             Object value = objectModelMap.get(key);
             treeWalkProcessor.processWalk(createWalkContext(key,value,objectModelMap,parentAttribute));
             if(value instanceof HashMap){
