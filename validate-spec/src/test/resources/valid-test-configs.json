@@ -17,15 +17,12 @@
     },
     {
       "name":"InheritingConfig",
-      "inherits":[{
-        "configName":"BaseConfig",
-        "rules":{"inheritExcept":["rule1","rule2"]}
-      }],
       "roots":[{
       	"name":"Root",
         "inherits":[{
           "configName":"BaseConfig",
-          "properties":{"inherit":["field1","field2"]}
+          "properties":{"inherit":["field1","field2"]},
+          "rules":{"inheritExcept":["rule3","rule4"]}
         }],
         "properties":[{
         	"validation":"validation name",

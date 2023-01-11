@@ -1,4 +1,7 @@
-package spec;/* (C)2022 */
+/* (C)2023 */
+package spec; /* (C)2022 */
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -6,13 +9,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.SpecVersion;
 import com.networknt.schema.ValidationMessage;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class InvalidConfigsTest {
 
@@ -32,8 +32,7 @@ public class InvalidConfigsTest {
     }
 
     @Test
-    public void shouldBeUnsuccessfulForAllValidConfigs()
-            throws JsonProcessingException {
+    public void shouldBeUnsuccessfulForAllValidConfigs() throws JsonProcessingException {
         Set<ValidationMessage> errors = jsonSchemaFactory.getSchema(schema).validate(testData);
         assertFalse(errors.size() == 0);
     }

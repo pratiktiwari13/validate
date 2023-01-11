@@ -1,10 +1,12 @@
+/* (C)2023 */
 package io.validate.preprocess;
 
 import io.validate.preprocess.processor.transform.TransformContext;
 import io.validate.preprocess.processor.transform.TransformingVisitor;
 
-public class KeyCountingVisitor implements TransformingVisitor  {
+public class KeyCountingVisitor implements TransformingVisitor {
     int actualCount = 0;
+
     @Override
     public boolean shouldTransform(String attributeName, Object value) {
         return true;
@@ -16,7 +18,7 @@ public class KeyCountingVisitor implements TransformingVisitor  {
         return null;
     }
 
-    public int getActualCount(){
+    public int getActualCount() {
         return actualCount;
     }
 }

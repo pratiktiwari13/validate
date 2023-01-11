@@ -1,4 +1,7 @@
-package spec;/* (C)2022 */
+/* (C)2023 */
+package spec; /* (C)2022 */
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -7,14 +10,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.networknt.schema.JsonSchemaFactory;
 import com.networknt.schema.SpecVersion;
 import com.networknt.schema.ValidationMessage;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import java.io.File;
 import java.util.HashMap;
 import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class ValidConfigsTest {
 
@@ -31,14 +31,15 @@ public class ValidConfigsTest {
             testData =
                     objectMapper.readTree(
                             this.getClass().getResourceAsStream("/valid-test-configs.json"));
-        TypeReference<HashMap<String,Object>> typeRef
-                = new TypeReference<HashMap<String,Object>>() {};
-        HashMap<String,Object> o = objectMapper.readValue(this.getClass().getResourceAsStream("/valid-test-configs.json"), typeRef);
+        TypeReference<HashMap<String, Object>> typeRef =
+                new TypeReference<HashMap<String, Object>>() {};
+        HashMap<String, Object> o =
+                objectMapper.readValue(
+                        this.getClass().getResourceAsStream("/valid-test-configs.json"), typeRef);
     }
 
     @Test
-    public void shouldBeSuccessfulForAllValidConfigs()
-            throws JsonProcessingException {
+    public void shouldBeSuccessfulForAllValidConfigs() throws JsonProcessingException {
         Set<ValidationMessage> errors = jsonSchemaFactory.getSchema(schema).validate(testData);
         assertTrue(errors.size() == 0);
     }
